@@ -1,0 +1,115 @@
+@font-face{
+    font-family: Painter;
+    src: url(Painter-LxXg.ttf);
+    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    font-family: Painter;
+}
+#container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    background: radial-gradient(circle, rgba(44,0,0,1) 0%, rgba(16,4,4,1) 100%);
+    align-items: center;
+
+    justify-content: center;
+}
+#container h1{
+    position: absolute;
+    font-size: 10vw;
+    top:10%;
+    color: #b98537;
+}
+#restart{
+    position: relative;
+    font-size: 4vw;
+    cursor: pointer;
+    /* font-weight: 900px; */
+    border: 2px solid #b98537;
+    background-color: transparent;
+    overflow: hidden;
+    bottom: -40%;
+    /* left: -10%; */
+    padding: 12px 40px;
+}
+#restart span{
+    position: relative;
+    color: #b98537;
+    font-family: Painter;
+    z-index: 1;
+    transition: opacity 1s ease;
+}
+#restart::after{
+    content: "";
+    position: absolute;
+    width: 95%;
+    height: 80%;
+    left: 2.5%;
+    top: 10%;
+    background-color: #b98537;
+    opacity: 0;
+    transition:1s ease;
+}
+#restart:hover::after{
+    opacity: 1;
+    
+}
+#restart span:hover{
+    color: transparent;
+    background: radial-gradient(circle, rgba(44, 0, 0, 1) 0%, rgba(16, 4, 4, 1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+#boxes{
+    display: grid;
+    color: white;
+    grid-template-columns: repeat(3,100px);
+    row-gap: 0px;
+    column-gap: 20px;
+    font-size: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+}
+#cell {
+    /* border: 2px solid #b98537; */
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border: 0;
+    border-right: 10px solid #b98537;
+    border-bottom: 10px solid #b98537;
+    border-style: double;
+}
+#cell:nth-child(3) {
+    border-right: none;
+}
+#cell:nth-child(6) {
+    border-right: none;
+}
+#cell:nth-child(9) {
+    border-right: none;
+    border-bottom: none;
+}
+#cell:nth-child(7) {
+    border-bottom: none;
+}
+#cell:nth-child(8) {
+    border-bottom: none;
+}
+
+
